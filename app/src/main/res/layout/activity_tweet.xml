@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.TweetActivity">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tweetText"
+            android:hint="What'\s up"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+            android:id="@+id/tweetImage"
+            android:scaleType="center"
+            android:onClick="addImage"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/tweetText"
+            android:minHeight="200dp"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSend"
+            app:srcCompat="@drawable/send"
+            android:onClick="postTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/grid_3x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabPhoto"
+            android:onClick="addImage"
+            app:srcCompat="@drawable/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/grid_3x"
+            app:layout_constraintBottom_toTopOf="@+id/fabSend"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+            android:id="@+id/tweetProgressLayout"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:elevation="5dp"
+            android:visibility="gone"
+            android:background="@color/trans_gray"
+            android:layout_height="match_parent">
+
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
